@@ -1,0 +1,73 @@
+# =============================================================================
+# .gitignore for LaTeX PhD proposal
+# =============================================================================
+
+# --- Core LaTeX build artifacts ---
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.lof
+*.lot
+*.lol
+
+# --- Index & glossary ---
+*.idx
+*.ind
+*.ilg
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+*.ist
+
+# --- Intermediate pdflatex/xelatex files ---
+*.dvi
+*.xdv
+*.ps
+
+# --- latexmk ---
+*.fls
+*.fdb_latexmk
+
+# --- BibLaTeX / Biber ---
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+
+# --- Temporary & editor files ---
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# --- VS Code ---
+.vscode/
+
+# --- Python (for any scripts in the repo) ---
+__pycache__/
+*.pyc
+
+# =============================================================================
+# PDF OUTPUT — choose one of the two options below:
+# =============================================================================
+
+# Option A: Ignore the compiled PDF (team members compile locally)
+# *.pdf
+
+# Option B: Track the compiled PDF in git (share final output with supervisor)
+# Comment out the line above and uncomment nothing — PDFs are tracked by default.
+# To explicitly track a specific PDF even if *.pdf is ignored:
+# !proposal/lit_review.pdf

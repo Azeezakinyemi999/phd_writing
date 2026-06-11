@@ -1,0 +1,129 @@
+% =============================================================================
+% preamble.tex
+% Shared package configuration for the PhD proposal.
+% This file is \input{} into proposal.tex — do NOT add \documentclass here.
+% =============================================================================
+
+
+% -----------------------------------------------------------------------------
+% 1. ENCODING & FONTS
+% Must be loaded first so all other packages interpret characters correctly.
+% -----------------------------------------------------------------------------
+\usepackage[T1]{fontenc}      % Use 8-bit font encoding (handles accents, etc.)
+\usepackage[utf8]{inputenc}   % Accept UTF-8 characters in source files
+\usepackage{lmodern}          % Latin Modern fonts — scalable, good for PDF
+\usepackage{microtype}        % Subtle improvements to text justification & spacing
+
+
+% -----------------------------------------------------------------------------
+% 2. PAGE LAYOUT
+% Controls paper size, margins, and line spacing.
+% -----------------------------------------------------------------------------
+\usepackage[a4paper, margin=2.5cm]{geometry}   % A4 paper with 2.5 cm margins
+\usepackage{setspace}
+\onehalfspacing                                 % 1.5 line spacing (common for theses)
+                                                % Use \doublespacing if required by your university
+
+
+% -----------------------------------------------------------------------------
+% 3. MATHEMATICS
+% Essential for a technical/scientific PhD proposal.
+% -----------------------------------------------------------------------------
+\usepackage{amsmath}      % Core math environments: align, equation, gather, etc.
+\usepackage{amssymb}      % Extra math symbols: \mathbb{R}, \nabla, etc.
+\usepackage{amsthm}       % Theorem, lemma, proof environments
+\usepackage{mathtools}    % Extensions to amsmath (e.g. \coloneqq, dcases)
+\usepackage{subfiles}     % Allows each chapter to be compiled separately (for faster editing)
+
+% -----------------------------------------------------------------------------
+% 4. FIGURES & GRAPHICS
+% Tells LaTeX where to find images and how to handle them.
+% -----------------------------------------------------------------------------
+\usepackage{graphicx}     % \includegraphics command
+\graphicspath{            % Search these folders for figures automatically
+  {continuum_model/figures/}
+  {molecular_dynamics/figures/}
+  {sensitivity_analysis/figures/}
+}
+\usepackage{float}        % [H] placement option — forces figure exactly here
+\usepackage{caption}      % Customise caption style and spacing
+\usepackage{subcaption}   % \begin{subfigure} for side-by-side figures
+
+
+% -----------------------------------------------------------------------------
+% 5. TABLES
+% Packages for clean, publication-quality tables.
+% -----------------------------------------------------------------------------
+\usepackage{booktabs}     % \toprule, \midrule, \bottomrule — professional rules
+\usepackage{array}        % Extended column types in tabular (e.g. >{...}c)
+\usepackage{longtable}    % Tables that span multiple pages
+
+
+% -----------------------------------------------------------------------------
+% 6. UNITS & NUMBERS
+% Consistent formatting of physical quantities and units.
+% Usage: \SI{300}{\kelvin}  \SI{1.5e-9}{\metre}  \num{1234567}
+% -----------------------------------------------------------------------------
+\usepackage{siunitx}
+\sisetup{
+  separate-uncertainty = true,    % e.g. 1.23 ± 0.04
+  range-phrase = { to },          % e.g. 1 to 10 nm
+}
+
+
+% -----------------------------------------------------------------------------
+% 7. CODE LISTINGS
+% For displaying simulation scripts, input files, or pseudocode.
+% -----------------------------------------------------------------------------
+\usepackage{xcolor}       % Colour support (needed by listings for highlighting)
+\usepackage{listings}     % \begin{lstlisting} environment
+\lstset{
+  basicstyle  = \ttfamily\small,
+  keywordstyle= \color{blue},
+  commentstyle= \color{gray},
+  numbers     = left,
+  numberstyle = \tiny\color{gray},
+  breaklines  = true,
+  frame       = single,
+}
+
+
+% -----------------------------------------------------------------------------
+% 8. MISCELLANEOUS UTILITIES
+% Small but useful packages for writing and drafting.
+% -----------------------------------------------------------------------------
+\usepackage{enumitem}     % Customise list environments (\begin{itemize}, etc.)
+\usepackage{todonotes}    % \todo{fix this} — inline notes while drafting
+                          % Use \listoftodos to see all todos at once
+
+
+% -----------------------------------------------------------------------------
+% 9. BIBLIOGRAPHY  (BibLaTeX + Biber backend)
+% Single .bib file at the proposal/ root. Biber handles Unicode correctly.
+% Run order: pdflatex → biber → pdflatex → pdflatex  (latexmk handles this)
+% -----------------------------------------------------------------------------
+\usepackage[
+  backend  = biber,
+  style    = authoryear,  % Change to 'numeric' if your field uses [1] citations
+  sorting  = nyt,         % Sort by name, year, title
+  maxcitenames = 2,       % "Smith & Jones" — more authors become "Smith et al."
+]{biblatex}
+\addbibresource{references.bib}  % Path relative to proposal.tex
+
+
+% -----------------------------------------------------------------------------
+% 10. HYPERLINKS & PDF METADATA
+% hyperref must be loaded SECOND TO LAST (after almost all other packages).
+% cleveref must be loaded LAST (after hyperref).
+% -----------------------------------------------------------------------------
+\usepackage[
+  colorlinks = true,
+  linkcolor  = blue,      % Internal links (sections, figures, tables)
+  citecolor  = blue,      % Citation links
+  urlcolor   = blue,      % External URLs
+  pdftitle   = {PhD Proposal},
+  pdfauthor  = {Your Name},
+]{hyperref}
+
+\usepackage{cleveref}     % Smart cross-references: \cref{fig:results} → "Figure 1"
+                          % Also handles ranges: \crefrange{eq:1}{eq:3} → "Equations 1 to 3"

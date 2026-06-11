@@ -1,1 +1,22 @@
-hi
+\documentclass[12pt, a4paper]{report}
+
+\input{preamble}   % load all packages
+\input{macros}     % load custom commands
+
+\begin{document}
+
+\title{Your PhD Proposal Title}
+\author{Your Name}
+\date{\today}
+\maketitle
+
+\tableofcontents
+
+\subfile{lit_review}
+\subfile{continuum_model/cm}
+\subfile{molecular_dynamics/md}
+\subfile{sensitivity_analysis/sensitivity_analysis}
+
+\printbibliography
+
+\end{document}
