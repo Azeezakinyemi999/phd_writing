@@ -7,7 +7,91 @@
 \chapter{Sensitivity Analysis}
 
 \section{Introduction}
+\begin{itemize}
+  \item What sensitivity analysis is and why it matters
+  \item Role in model building, validation, and communication
+  \item Scope: local vs.\ global, deterministic vs.\ probabilistic
+\end{itemize}
 
-Here, i will be discussing the sensitivity analysis of the model parameters and how it affects the results. I will also be comparing different methods for sensitivity analysis and their advantages and disadvantages.
+\section{Notation and Problem Setup}
+\begin{itemize}
+  \item Model as input-output mapping: %$\output = \model(\inputvec)$
+  \item Input space, output space
+  \item Sensitivity measure vs.\ importance measure distinction
+\end{itemize}
+
+\section{Local (Deterministic) Methods}
+
+  \subsection{One-at-a-Time (OAT) Methods and Tornado Diagrams}
+  \begin{itemize}
+    \item Finite difference approach
+    \item Individual effects, interaction effects, total effects
+    \item Generalized Tornado diagrams
+  \end{itemize}
+
+  \subsection{Differentiation-Based Methods}
+  \begin{itemize}
+    \item Partial derivatives and comparative statics
+    \item Differential importance measure (DIM)
+    \item Elasticity
+  \end{itemize}
+
+  \subsection{Screening Methods}
+  \begin{itemize}
+    \item Sequential bifurcation
+    \item Morris elementary effects method
+  \end{itemize}
+
+\section{Global (Probabilistic) Methods}
+
+  \subsection{Regression-Based Methods}
+  \begin{itemize}
+    \item Standardized Regression Coefficients (SRC)
+    \item Pearson and Spearman correlation
+    \item Limitations: $R^2$ and nonlinearity
+  \end{itemize}
+
+  \subsection{Variance-Based Methods (Sobol Indices)}
+  \begin{itemize}
+    \item Functional ANOVA decomposition
+    \item First-order index $\Si$ (main effect)
+    \item Total-order index $\STi$
+    \item Higher-order interaction indices
+  \end{itemize}
+
+  \subsection{Density- and Moment-Independent Methods}
+  \begin{itemize}
+    \item Delta sensitivity measure ($\delta_i$)
+    \item Kullback--Leibler divergence-based measures
+    \item Transformation invariance property
+  \end{itemize}
+
+  \subsection{Value of Information-Based Methods}
+  \begin{itemize}
+    \item Partial Expected Value of Perfect Information (EVPPI)
+    \item Decision sensitivity vs.\ value sensitivity
+  \end{itemize}
+
+\section{Estimation and Computational Strategies}
+\begin{itemize}
+  \item Design-based: Sobol sequences, FAST, RBD
+  \item Given-data (post-processing) approaches
+  \item Meta-models / emulators (Gaussian Process, PCE)
+\end{itemize}
+
+\section{Sensitivity Settings and Interpretation}
+\begin{itemize}
+  \item Factor prioritization setting
+  \item Factor fixing setting
+  \item Model structure setting
+  \item Direction of change setting
+  \item Stability/robustness setting
+\end{itemize}
+
+\section{Choice of Method for This Work}
+\begin{itemize}
+  \item Justify which method(s) you will use and why
+  \item Link to your specific model (continuum/MD)
+\end{itemize}
 
 \end{document}

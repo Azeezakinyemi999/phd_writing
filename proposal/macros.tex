@@ -1,160 +1,160 @@
-% =============================================================================
-% macros.tex
-% Custom commands and notation for the PhD proposal.
-% This file is \input{} into proposal.tex — do NOT add \documentclass here.
-%
-% HOW TO USE:
-%   Define a command once here, then use it throughout all chapter files.
-%   To change notation globally, edit only this file.
-% =============================================================================
+% % =============================================================================
+% % macros.tex
+% % Custom commands and notation for the PhD proposal.
+% % This file is \input{} into proposal.tex — do NOT add \documentclass here.
+% %
+% % HOW TO USE:
+% %   Define a command once here, then use it throughout all chapter files.
+% %   To change notation globally, edit only this file.
+% % =============================================================================
 
 
-% -----------------------------------------------------------------------------
-% 1. GENERAL MATHEMATICS
-% Common symbols and operators used across all chapters.
-% -----------------------------------------------------------------------------
+% % -----------------------------------------------------------------------------
+% % 1. GENERAL MATHEMATICS
+% % Common symbols and operators used across all chapters.
+% % -----------------------------------------------------------------------------
 
-% Upright 'd' for differentials (e.g. dx, dt) — standard in physics/engineering
-\newcommand{\diff}{\mathop{}\!\mathrm{d}}
-% Usage: $\int f(x) \diff x$
+% % Upright 'd' for differentials (e.g. dx, dt) — standard in physics/engineering
+% \newcommand{\diff}{\mathop{}\!\mathrm{d}}
+% % Usage: $\int f(x) \diff x$
 
-% Common number sets
-\newcommand{\R}{\mathbb{R}}    % Real numbers ℝ
-\newcommand{\N}{\mathbb{N}}    % Natural numbers ℕ
-\newcommand{\Z}{\mathbb{Z}}    % Integers ℤ
+% % Common number sets
+% \newcommand{\R}{\mathbb{R}}    % Real numbers ℝ
+% \newcommand{\N}{\mathbb{N}}    % Natural numbers ℕ
+% \newcommand{\Z}{\mathbb{Z}}    % Integers ℤ
 
-% Norms and absolute value
-\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
-\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
-% Usage: $\norm{\mathbf{v}}$   $\abs{x - y}$
+% % Norms and absolute value
+% \newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+% \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+% % Usage: $\norm{\mathbf{v}}$   $\abs{x - y}$
 
-% Partial and total derivatives
-\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}       % \pd{f}{x}
-\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}  % \pdd{f}{x}
-\newcommand{\td}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}  % \td{f}{t}
+% % Partial and total derivatives
+% \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}       % \pd{f}{x}
+% \newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}  % \pdd{f}{x}
+% \newcommand{\td}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}  % \td{f}{t}
 
-% Vector and tensor notation
-\newcommand{\vect}[1]{\mathbf{#1}}          % bold vector: \vect{u}
-\newcommand{\tens}[1]{\boldsymbol{#1}}      % bold greek tensor: \tens{\sigma}
-\newcommand{\mat}[1]{\mathbf{#1}}           % matrix: \mat{A}
-\newcommand{\transpose}{^{\mathsf{T}}}      % transpose: \mat{A}\transpose
-
-
-% -----------------------------------------------------------------------------
-% 2. CONTINUUM MODEL
-% Notation for stress, strain, and field variables.
-% -----------------------------------------------------------------------------
-
-\newcommand{\stress}{\tens{\sigma}}            % Cauchy stress tensor σ
-\newcommand{\strain}{\tens{\varepsilon}}       % Strain tensor ε
-\newcommand{\stiffness}{\mat{C}}               % Stiffness tensor C
-\newcommand{\displacement}{\vect{u}}           % Displacement field u
-\newcommand{\bodyforce}{\vect{b}}              % Body force vector b
-\newcommand{\traction}{\vect{t}}               % Traction vector t
-
-% Nabla / gradient operators
-\newcommand{\grad}{\nabla}                     % Gradient ∇
-\newcommand{\divg}{\nabla \cdot}               % Divergence ∇·
-\newcommand{\lapl}{\nabla^2}                   % Laplacian ∇²
-
-% Domain notation
-\newcommand{\domain}{\Omega}                   % Domain Ω
-\newcommand{\boundary}{\partial\Omega}         % Boundary ∂Ω
+% % Vector and tensor notation
+% \newcommand{\vect}[1]{\mathbf{#1}}          % bold vector: \vect{u}
+% \newcommand{\tens}[1]{\boldsymbol{#1}}      % bold greek tensor: \tens{\sigma}
+% \newcommand{\mat}[1]{\mathbf{#1}}           % matrix: \mat{A}
+% \newcommand{\transpose}{^{\mathsf{T}}}      % transpose: \mat{A}\transpose
 
 
-% -----------------------------------------------------------------------------
-% 3. MOLECULAR DYNAMICS
-% Notation for atomic positions, forces, energies, and potentials.
-% -----------------------------------------------------------------------------
+% % -----------------------------------------------------------------------------
+% % 2. CONTINUUM MODEL
+% % Notation for stress, strain, and field variables.
+% % -----------------------------------------------------------------------------
 
-\newcommand{\pos}{\vect{r}}                    % Position vector r
-\newcommand{\vel}{\vect{v}}                    % Velocity vector v
-\newcommand{\force}{\vect{F}}                  % Force vector F
-\newcommand{\mass}{m}                          % Atomic mass m
-\newcommand{\Natoms}{N}                        % Number of atoms N
+% \newcommand{\stress}{\tens{\sigma}}            % Cauchy stress tensor σ
+% \newcommand{\strain}{\tens{\varepsilon}}       % Strain tensor ε
+% \newcommand{\stiffness}{\mat{C}}               % Stiffness tensor C
+% \newcommand{\displacement}{\vect{u}}           % Displacement field u
+% \newcommand{\bodyforce}{\vect{b}}              % Body force vector b
+% \newcommand{\traction}{\vect{t}}               % Traction vector t
 
-% Energies
-\newcommand{\Etot}{E_{\mathrm{tot}}}           % Total energy
-\newcommand{\Ekin}{E_{\mathrm{kin}}}           % Kinetic energy
-\newcommand{\Epot}{E_{\mathrm{pot}}}           % Potential energy
-\newcommand{\Eatom}{E_{\mathrm{atom}}}         % Per-atom energy
+% % Nabla / gradient operators
+% \newcommand{\grad}{\nabla}                     % Gradient ∇
+% \newcommand{\divg}{\nabla \cdot}               % Divergence ∇·
+% \newcommand{\lapl}{\nabla^2}                   % Laplacian ∇²
 
-% Interatomic potential
-\newcommand{\phi}{\varphi}                     % Pair potential φ
-\newcommand{\cutoff}{r_{\mathrm{c}}}           % Cutoff radius r_c
-
-% Thermodynamic quantities
-\newcommand{\Temp}{T}                          % Temperature T
-\newcommand{\Press}{P}                         % Pressure P
-\newcommand{\kB}{k_{\mathrm{B}}}              % Boltzmann constant k_B
-
-% Mean squared displacement
-\newcommand{\MSD}{\langle \abs{\pos(t) - \pos(0)}^2 \rangle}
-% Usage: $\MSD$
-
-% Diffusivity
-\newcommand{\Diff}{D}                          % Diffusion coefficient D
+% % Domain notation
+% \newcommand{\domain}{\Omega}                   % Domain Ω
+% \newcommand{\boundary}{\partial\Omega}         % Boundary ∂Ω
 
 
-% -----------------------------------------------------------------------------
-% 4. SENSITIVITY ANALYSIS
-% Notation for Sobol indices and variance-based methods.
-% -----------------------------------------------------------------------------
+% % -----------------------------------------------------------------------------
+% % 3. MOLECULAR DYNAMICS
+% % Notation for atomic positions, forces, energies, and potentials.
+% % -----------------------------------------------------------------------------
 
-\newcommand{\model}{\mathcal{M}}               % Model operator M
-\newcommand{\inputvec}{\vect{X}}               % Input vector X
-\newcommand{\output}{Y}                        % Model output Y
+% \newcommand{\pos}{\vect{r}}                    % Position vector r
+% \newcommand{\vel}{\vect{v}}                    % Velocity vector v
+% \newcommand{\force}{\vect{F}}                  % Force vector F
+% \newcommand{\mass}{m}                          % Atomic mass m
+% \newcommand{\Natoms}{N}                        % Number of atoms N
 
-% Variance
-\newcommand{\Var}[1]{\mathrm{Var}\!\left(#1\right)}
-\newcommand{\Exp}[1]{\mathbb{E}\!\left[#1\right]}
-% Usage: $\Var{Y}$   $\Exp{X_i}$
+% % Energies
+% \newcommand{\Etot}{E_{\mathrm{tot}}}           % Total energy
+% \newcommand{\Ekin}{E_{\mathrm{kin}}}           % Kinetic energy
+% \newcommand{\Epot}{E_{\mathrm{pot}}}           % Potential energy
+% \newcommand{\Eatom}{E_{\mathrm{atom}}}         % Per-atom energy
 
-% Sobol sensitivity indices
-\newcommand{\Si}{S_i}                          % First-order Sobol index
-\newcommand{\Sij}{S_{ij}}                      % Second-order Sobol index
-\newcommand{\STi}{S_{T_i}}                     % Total-order Sobol index
+% % Interatomic potential
+% \newcommand{\phi}{\varphi}                     % Pair potential φ
+% \newcommand{\cutoff}{r_{\mathrm{c}}}           % Cutoff radius r_c
 
-% Morris elementary effects
-\newcommand{\EE}{\mathrm{EE}}                  % Elementary effect
-\newcommand{\mustar}{\mu^*}                    % Mean of |EE| (Morris)
-\newcommand{\sigmaEE}{\sigma_{\mathrm{EE}}}    % Std dev of EE
+% % Thermodynamic quantities
+% \newcommand{\Temp}{T}                          % Temperature T
+% \newcommand{\Press}{P}                         % Pressure P
+% \newcommand{\kB}{k_{\mathrm{B}}}              % Boltzmann constant k_B
 
+% % Mean squared displacement
+% \newcommand{\MSD}{\langle \abs{\pos(t) - \pos(0)}^2 \rangle}
+% % Usage: $\MSD$
 
-% -----------------------------------------------------------------------------
-% 5. WRITING SHORTHANDS
-% Abbreviations and text shortcuts for consistent writing style.
-% -----------------------------------------------------------------------------
-\usepackage{xspace}   % Prevents eating the space after the command
-
-\newcommand{\ie}{i.e.,\xspace}
-\newcommand{\eg}{e.g.,\xspace}
-\newcommand{\cf}{cf.\xspace}
-\newcommand{\etal}{\textit{et al.}\xspace}
-\newcommand{\vs}{vs.\xspace}
-
-% Shorthand for referencing equations, figures, tables consistently
-% (only needed if NOT using cleveref — if using cleveref, use \cref instead)
-% \newcommand{\Eq}[1]{Eq.~(\ref{#1})}
-% \newcommand{\Fig}[1]{Fig.~\ref{#1}}
-% \newcommand{\Tab}[1]{Table~\ref{#1}}
+% % Diffusivity
+% \newcommand{\Diff}{D}                          % Diffusion coefficient D
 
 
-% -----------------------------------------------------------------------------
-% 6. THEOREM-LIKE ENVIRONMENTS
-% Numbered environments for definitions, assumptions, and propositions.
-% Requires \usepackage{amsthm} in preamble.tex (already included).
-% -----------------------------------------------------------------------------
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{proposition}[theorem]{Proposition}
+% % -----------------------------------------------------------------------------
+% % 4. SENSITIVITY ANALYSIS
+% % Notation for Sobol indices and variance-based methods.
+% % -----------------------------------------------------------------------------
 
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[chapter]
-\newtheorem{assumption}{Assumption}[chapter]
-\newtheorem{example}{Example}[chapter]
+% \newcommand{\model}{\mathcal{M}}               % Model operator M
+% \newcommand{\inputvec}{\vect{X}}               % Input vector X
+% \newcommand{\output}{Y}                        % Model output Y
 
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-\newtheorem*{note}{Note}
+% % Variance
+% \newcommand{\Var}[1]{\mathrm{Var}\!\left(#1\right)}
+% \newcommand{\Exp}[1]{\mathbb{E}\!\left[#1\right]}
+% % Usage: $\Var{Y}$   $\Exp{X_i}$
+
+% % Sobol sensitivity indices
+% \newcommand{\Si}{S_i}                          % First-order Sobol index
+% \newcommand{\Sij}{S_{ij}}                      % Second-order Sobol index
+% \newcommand{\STi}{S_{T_i}}                     % Total-order Sobol index
+
+% % Morris elementary effects
+% \newcommand{\EE}{\mathrm{EE}}                  % Elementary effect
+% \newcommand{\mustar}{\mu^*}                    % Mean of |EE| (Morris)
+% \newcommand{\sigmaEE}{\sigma_{\mathrm{EE}}}    % Std dev of EE
+
+
+% % -----------------------------------------------------------------------------
+% % 5. WRITING SHORTHANDS
+% % Abbreviations and text shortcuts for consistent writing style.
+% % -----------------------------------------------------------------------------
+% \usepackage{xspace}   % Prevents eating the space after the command
+
+% \newcommand{\ie}{i.e.,\xspace}
+% \newcommand{\eg}{e.g.,\xspace}
+% \newcommand{\cf}{cf.\xspace}
+% \newcommand{\etal}{\textit{et al.}\xspace}
+% \newcommand{\vs}{vs.\xspace}
+
+% % Shorthand for referencing equations, figures, tables consistently
+% % (only needed if NOT using cleveref — if using cleveref, use \cref instead)
+% % \newcommand{\Eq}[1]{Eq.~(\ref{#1})}
+% % \newcommand{\Fig}[1]{Fig.~\ref{#1}}
+% % \newcommand{\Tab}[1]{Table~\ref{#1}}
+
+
+% % -----------------------------------------------------------------------------
+% % 6. THEOREM-LIKE ENVIRONMENTS
+% % Numbered environments for definitions, assumptions, and propositions.
+% % Requires \usepackage{amsthm} in preamble.tex (already included).
+% % -----------------------------------------------------------------------------
+% \newtheorem{theorem}{Theorem}[chapter]
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{corollary}[theorem]{Corollary}
+% \newtheorem{proposition}[theorem]{Proposition}
+
+% \theoremstyle{definition}
+% \newtheorem{definition}{Definition}[chapter]
+% \newtheorem{assumption}{Assumption}[chapter]
+% \newtheorem{example}{Example}[chapter]
+
+% \theoremstyle{remark}
+% \newtheorem*{remark}{Remark}
+% \newtheorem*{note}{Note}
